@@ -1,0 +1,24 @@
+{
+  "name": "auto-testing",
+  "version": "1.0.0",
+  "description": "Это репозиторий Садиковой Дарьи Михайловны 221-321 для выполнения заданий по дисциплине \"Модульное тестирование\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariasadikova/auto-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dariasadikova/auto-testing/issues"
+  },
+  "homepage": "https://github.com/dariasadikova/auto-testing#readme",
+  "dependencies": {
+    "geckodriver": "^4.4.0",
+    "selenium-webdriver": "^4.21.0"
+  }
+}
