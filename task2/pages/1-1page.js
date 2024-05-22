@@ -1,5 +1,5 @@
-const WebPage = require("./basepage");
-const { By } = require("selenium-webdriver");
+import WebPage from "./basepage.js";
+import { By } from "selenium-webdriver";
 
 const URL = "https://lambdatest.github.io/sample-todo-app/";
 
@@ -36,4 +36,4 @@ class TodoPage extends WebPage {
     }
 }
 
-module.exports = TodoPage;
+export default TodoPage;

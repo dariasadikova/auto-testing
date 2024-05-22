@@ -1,6 +1,6 @@
-const TodoPage = require("../pages/1-1page");
-const { describe, before, after, it } = require('mocha');
-let assert;
+import TodoPage from "../pages/1-1page.js";
+import { describe, before, after, it } from 'mocha';
+import assert from 'assert';
 
 const handleErrors = (action, handler) => {
     return async () => {
