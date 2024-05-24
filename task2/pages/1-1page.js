@@ -17,7 +17,7 @@ class TodoPage extends WebPage {
 
     async checkRemainingCount(expected) {
         const text = await this.retrieveText(this.REMAINING_TEXT);
-        assert.strictEqual(text, expected, "Remaining count does not match.");
+        return text === expected;
     }
 
     async toggleItem(index) {

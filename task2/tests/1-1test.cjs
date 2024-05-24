@@ -1,6 +1,6 @@
 import TodoPage from "../pages/1-1page.js";
 import { describe, before, after, it } from 'mocha';
-import assert from 'assert';
+import { assert } from 'chai';
 
 const handleErrors = (action, handler) => {
     return async () => {
@@ -22,7 +22,6 @@ describe("Todo App Tests", function() {
 
     before(async () => {
         todoPage = new TodoPage();
-        ({ assert } = await import('chai'));
         await todoPage.load();
     });
 
@@ -36,7 +35,7 @@ describe("Todo App Tests", function() {
     it("Validates remaining tasks", handleErrors(async () => {
         for (let i = 1; i <= totalItems; i++) {
             const expectedText = `${itemsRemaining} of ${totalItems} remaining`;
-            assert.strictEqual(await todoPage.checkRemainingCount(expectedText), true, "Remaining tasks mismatch expected value");
+            assert.isTrue(await todoPage.checkRemainingCount(expectedText), "Remaining tasks mismatch expected value");
             const active = await todoPage.toggleItem(i);
             assert.isTrue(active, `Item ${i} should be active.`);
             itemsRemaining--;
@@ -49,7 +48,7 @@ describe("Todo App Tests", function() {
         totalItems++;
         itemsRemaining++;
         const expectedText = `${itemsRemaining} of ${totalItems} remaining`;
-        assert.strictEqual(await todoPage.checkRemainingCount(expectedText), true, "Remaining tasks did not update as expected");
+        assert.isTrue(await todoPage.checkRemainingCount(expectedText), "Remaining tasks mismatch expected value");
     }, async () => await todoPage.takeScreenshot('error')));
 });
 

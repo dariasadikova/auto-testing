@@ -1,6 +1,5 @@
 import WebPage from './basepage.js';
-import {Builder, Browser, By, Key } from 'selenium-webdriver';
-
+import {By, Key } from 'selenium-webdriver';
 
 
 export class ScheduleManager extends WebPage {

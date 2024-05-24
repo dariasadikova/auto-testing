@@ -1,8 +1,8 @@
 import { Builder, Browser } from "selenium-webdriver";
 
 class WebPage {
-  constructor() {
-    this.driver = new Builder().forBrowser(Browser.EDGE).build();
+  constructor(driver) {
+    this.driver = driver;
     this.driver.manage().window().maximize();
   }
 
@@ -28,7 +28,7 @@ class WebPage {
 
   async takeScreenshot(filename) {
     const image = await this.driver.takeScreenshot();
-    require("fs").writeFileSync(filename, image, "base64");  // Сохранение скриншота
+    require("fs").writeFileSync(filename, image, "base64"); 
   }
 
   async shutdown() {
